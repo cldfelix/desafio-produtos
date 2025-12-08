@@ -1,11 +1,14 @@
 'use client';
 
+import Pagination from '@/components/Pagination';
 import ProductFilters from '@/components/ProductFilters';
 import ProductList from '@/components/ProductList';
 import { fetchProducts } from '@/lib/api';
 import { useProductStore } from '@/store/productStore';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+
+const ITEMS_PER_PAGE = 3;
 
 export default function ProductsPage() {
   const setProducts = useProductStore(state => state.setProducts);
@@ -13,6 +16,24 @@ export default function ProductsPage() {
   const setError = useProductStore(state => state.setError);
   const error = useProductStore(state => state.error);
   const filteredProducts = useProductStore(state => state.filteredProducts);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // Calcular produtos paginados
+  const paginatedProducts = useMemo(() => {
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const endIndex = startIndex + ITEMS_PER_PAGE;
+    return filteredProducts.slice(startIndex, endIndex);
+  }, [filteredProducts, currentPage]);
+
+  // Calcular total de páginas
+  const totalPages = useMemo(() => {
+    return Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
+  }, [filteredProducts.length]);
+
+  // Resetar para página 1 quando os filtros mudarem
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filteredProducts.length]);
 
   useEffect(() => {
     async function loadProducts() {
@@ -67,10 +88,23 @@ export default function ProductsPage() {
         <div className="mb-4">
           <p className="text-gray-600">
             {filteredProducts.length} produto(s) encontrado(s)
+            {totalPages > 1 && (
+              <span className="ml-2 text-gray-500">
+                (Página {currentPage} de {totalPages})
+              </span>
+            )}
           </p>
         </div>
 
-        <ProductList />
+        <ProductList products={paginatedProducts} />
+
+        {totalPages > 1 && (
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={setCurrentPage}
+          />
+        )}
       </div>
     </div>
   );

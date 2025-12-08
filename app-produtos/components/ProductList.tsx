@@ -4,8 +4,11 @@ import { useProductStore } from '@/store/productStore';
 import { Product } from '@/types/product';
 import Image from 'next/image';
 
-export default function ProductList() {
-  const filteredProducts = useProductStore(state => state.filteredProducts);
+interface ProductListProps {
+  products: Product[];
+}
+
+export default function ProductList({ products }: ProductListProps) {
   const isLoading = useProductStore(state => state.isLoading);
 
   if (isLoading) {
@@ -16,7 +19,7 @@ export default function ProductList() {
     );
   }
 
-  if (filteredProducts.length === 0) {
+  if (products.length === 0) {
     return (
       <div className="text-center py-12">
         <p className="text-gray-600 text-lg">Nenhum produto encontrado.</p>
@@ -26,7 +29,7 @@ export default function ProductList() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {filteredProducts.map(product => (
+      {products.map(product => (
         <ProductCard key={product.id} product={product} />
       ))}
     </div>
