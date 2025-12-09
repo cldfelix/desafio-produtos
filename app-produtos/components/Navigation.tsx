@@ -9,7 +9,6 @@ export default function Navigation() {
   const navItems = [
     { href: '/', label: 'Dashboard' },
     { href: '/produtos', label: 'Produtos' },
-    { href: '/produtos/novo', label: 'Novo Produto' },
   ];
 
   return (

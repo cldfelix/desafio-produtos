@@ -59,15 +59,7 @@ export default function ProductsPage() {
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="container mx-auto px-4 max-w-7xl">
         <header className="mb-8">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-4xl font-bold text-gray-800 mb-2">
-                Lista de Produtos
-              </h1>
-              <p className="text-gray-600">
-                Visualize e gerencie todos os seus produtos
-              </p>
-            </div>
+          <div className="flex justify-end">
             <Link
               href="/produtos/novo"
               className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
