@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination deve renderizar snapshot com múltiplas páginas 1`] = `
+<div
+  class="flex items-center justify-center gap-2 mt-8"
+>
+  <button
+    aria-label="Página anterior"
+    class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+    disabled=""
+  >
+    Anterior
+  </button>
+  <div
+    class="flex gap-1"
+  >
+    <button
+      aria-current="page"
+      aria-label="Ir para página 1"
+      class="px-4 py-2 border rounded-md transition-colors bg-blue-600 text-white border-blue-600"
+    >
+      1
+    </button>
+    <button
+      aria-label="Ir para página 2"
+      class="px-4 py-2 border rounded-md transition-colors border-gray-300 text-gray-700 bg-white hover:bg-gray-50"
+    >
+      2
+    </button>
+    <button
+      aria-label="Ir para página 3"
+      class="px-4 py-2 border rounded-md transition-colors border-gray-300 text-gray-700 bg-white hover:bg-gray-50"
+    >
+      3
+    </button>
+    <button
+      aria-label="Ir para página 4"
+      class="px-4 py-2 border rounded-md transition-colors border-gray-300 text-gray-700 bg-white hover:bg-gray-50"
+    >
+      4
+    </button>
+    <button
+      aria-label="Ir para página 5"
+      class="px-4 py-2 border rounded-md transition-colors border-gray-300 text-gray-700 bg-white hover:bg-gray-50"
+    >
+      5
+    </button>
+  </div>
+  <button
+    aria-label="Próxima página"
+    class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+  >
+    Próxima
+  </button>
+</div>
+`;
+
+exports[`Pagination deve renderizar snapshot na página do meio 1`] = `
+<div
+  class="flex items-center justify-center gap-2 mt-8"
+>
+  <button
+    aria-label="Página anterior"
+    class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+  >
+    Anterior
+  </button>
+  <div
+    class="flex gap-1"
+  >
+    <button
+      aria-label="Ir para página 1"
+      class="px-4 py-2 border rounded-md transition-colors border-gray-300 text-gray-700 bg-white hover:bg-gray-50"
+    >
+      1
+    </button>
+    <button
+      aria-label="Ir para página 2"
+      class="px-4 py-2 border rounded-md transition-colors border-gray-300 text-gray-700 bg-white hover:bg-gray-50"
+    >
+      2
+    </button>
+    <button
+      aria-current="page"
+      aria-label="Ir para página 3"
+      class="px-4 py-2 border rounded-md transition-colors bg-blue-600 text-white border-blue-600"
+    >
+      3
+    </button>
+    <button
+      aria-label="Ir para página 4"
+      class="px-4 py-2 border rounded-md transition-colors border-gray-300 text-gray-700 bg-white hover:bg-gray-50"
+    >
+      4
+    </button>
+    <span
+      class="px-3 py-2 text-gray-500"
+    >
+      ...
+    </span>
+    <button
+      aria-label="Ir para página 10"
+      class="px-4 py-2 border rounded-md transition-colors border-gray-300 text-gray-700 bg-white hover:bg-gray-50"
+    >
+      10
+    </button>
+  </div>
+  <button
+    aria-label="Próxima página"
+    class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+  >
+    Próxima
+  </button>
+</div>
+`;
